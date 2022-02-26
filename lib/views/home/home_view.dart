@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hothweb/widgets/navigation_bar/navigation_bar.dart';
 import 'package:hothweb/widgets/centered_view/centered_view.dart';
 import 'package:hothweb/widgets/body/body.dart';
+import 'package:hothweb/widgets/progress_bar/progress_bar.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -18,7 +19,9 @@ class HomeView extends StatelessWidget {
               child: Row(children: [
                 Body(),
               ]),
-            )
+            ),
+            LinearProgressIndicatorClass()
+            
           ],
         ),
       ),
