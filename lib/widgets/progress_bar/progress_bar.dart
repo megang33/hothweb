@@ -6,26 +6,39 @@ class LinearProgressIndicatorClass extends StatefulWidget {
 }
 
 class _LinearProgressIndicatorClassState extends State<LinearProgressIndicatorClass> {
-  bool loading = true;
+  double progress = 0.0;
 
   @override
   Widget build(BuildContext context) {
     return Container(
         padding: const EdgeInsets.symmetric(horizontal:26),
-        child: Center(
-          child: loading? LinearProgressIndicator(
+        child: Column(
+          children: [
+            LinearProgressIndicator(
             backgroundColor: Colors.red,
             valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-
-          ):Text(
-            "No task to do",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-
+            value: progress,
             ),
+          ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            padding: EdgeInsets.all(15)
           ),
-        ),
+          child: Text('new post'),
+          onPressed:(){
+            if(progress >= 0.9){
+              setState(() {
+                progress = 0.0;
+              });
+            }
+            else{
+              setState(() {
+                progress += 0.1;
+              });
+            }
+          }
+        )
+        ]
+      ),
         
       );
   }

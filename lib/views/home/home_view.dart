@@ -18,10 +18,13 @@ class HomeView extends StatelessWidget {
             Expanded(
               child: Row(children: [
                 Body(),
+              Expanded(
+                child: Center(
+                  child: LinearProgressIndicatorClass(),
+                  ),
+              )
               ]),
             ),
-            LinearProgressIndicatorClass()
-            
           ],
         ),
       ),
