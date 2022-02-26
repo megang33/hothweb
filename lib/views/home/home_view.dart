@@ -20,7 +20,7 @@ class HomeView extends StatelessWidget {
                 Body(),
               Expanded(
                 child: Center(
-                  child: LinearProgressIndicatorClass(),
+                  child: LinearProgressIndicatorClass()
                   ),
               )
               ]),
