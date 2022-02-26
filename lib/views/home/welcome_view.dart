@@ -4,11 +4,23 @@ import 'package:hothweb/widgets/centered_view/centered_view.dart';
 import 'package:hothweb/widgets/body/body.dart';
 import 'package:hothweb/views/home/home_view.dart';
 
-
-class WelcomeView extends StatelessWidget {
+class WelcomeView extends StatefulWidget {
   const WelcomeView({Key? key}) : super(key: key);
 
   @override
+  WelcomeViewState createState() => WelcomeViewState();
+}
+
+class WelcomeViewState extends State<WelcomeView>{
+  final myController = TextEditingController();
+
+  @override
+  void dispose(){
+    myController.dispose();
+    super.dispose();
+  }
+
+@override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -21,9 +33,7 @@ class WelcomeView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(30,15,30,15),
             child: TextField(
-              onChanged:(text){
-                
-              },
+              controller: myController,
             decoration: InputDecoration(
               hintText: "Enter your username",
               labelText: "Username",
@@ -56,6 +66,7 @@ class WelcomeView extends StatelessWidget {
     );
   }
 }
+
 
 
 
