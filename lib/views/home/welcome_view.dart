@@ -4,6 +4,7 @@ import 'package:hothweb/widgets/centered_view/centered_view.dart';
 import 'package:hothweb/widgets/body/body.dart';
 import 'package:hothweb/views/home/home_view.dart';
 
+
 class WelcomeView extends StatelessWidget {
   const WelcomeView({Key? key}) : super(key: key);
 
@@ -11,23 +12,53 @@ class WelcomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.all(2),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:[
+          Text(
+            'WELCOME TO FAKEBOOK\n[insert logo]'
           ),
-          child: Text('Begin'),
-          onPressed:(){
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HomeView()),
-            );
-          }
+          Padding(
+            padding: const EdgeInsets.fromLTRB(30,15,30,15),
+            child: TextField(
+              onChanged:(text){
+                
+              },
+            decoration: InputDecoration(
+              hintText: "Enter your username",
+              labelText: "Username",
+              enabledBorder: OutlineInputBorder(
+                borderRadius: new BorderRadius.circular(10.0),
+                borderSide:BorderSide(color: Colors.black)
+              ),
+              focusedBorder:OutlineInputBorder(
+                borderRadius: new BorderRadius.circular(10.0),
+                borderSide:BorderSide(color: Colors.black)
+              )
+            )
+          ),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              padding: EdgeInsets.all(2),
+            ),
+            child: Text('Begin'),
+            onPressed:(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomeView()),
+              );
+            }
         ),
+        ]
+        
       )
     );
   }
 }
+
+
+
 
   // int _counter = 0;
 
