@@ -12,7 +12,7 @@ class Body extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            'FLUTTER WEB.\nTHE BASICS',
+            'FakeBook\n',
             style: TextStyle(
                 fontWeight: FontWeight.w800, fontSize: 80, height: 0.9),
           ),
@@ -20,8 +20,8 @@ class Body extends StatelessWidget {
             height: 30,
           ),
           Text(
-            'In this course we will go over the basics of using Flutter Web for website development. Topics will include Responsive Layout, Deploying, Font Changes, Hover Functionality, Modals and more.',
-            style: TextStyle(fontSize: 21, height: 1.7),
+            'Social Media is nothing but clicks and views, artificially inflating and crushing our senses of self worth from simply loading a page. Our individual and collective mental health may depend on how well we can manage these pressures.',
+            style: TextStyle(fontSize: 15, height: 1.7),
           ),
         ],
       ),

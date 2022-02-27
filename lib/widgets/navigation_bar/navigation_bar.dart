@@ -7,16 +7,14 @@ class Navigation extends StatelessWidget {
       height: 100,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
+        children: [
           SizedBox(
-            height: 80,
-            width: 150,
-            child: Image.asset('assets/insta.png'),
+            child: Image(image: AssetImage('assets/insta.png')),
           ),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              _NavBarItem('Episodes'),
+              _NavBarItem('A top bar'),
               SizedBox(
                 width: 60,
               ),

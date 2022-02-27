@@ -11,59 +11,50 @@ class WelcomeView extends StatefulWidget {
   WelcomeViewState createState() => WelcomeViewState();
 }
 
-class WelcomeViewState extends State<WelcomeView>{
+class WelcomeViewState extends State<WelcomeView> {
   final myController = TextEditingController();
 
   @override
-  void dispose(){
+  void dispose() {
     myController.dispose();
     super.dispose();
   }
 
-@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children:[
-          Text(
-            'WELCOME TO FAKEBOOK\n[insert logo]'
+        backgroundColor: Colors.white,
+        body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          SizedBox(
+            child: Image(image: AssetImage('assets/fakebook.jpg')),
           ),
+          Text('WELCOME TO FAKEBOOK'),
           Padding(
-            padding: const EdgeInsets.fromLTRB(30,15,30,15),
+            padding: const EdgeInsets.fromLTRB(30, 15, 30, 15),
             child: TextField(
-              controller: myController,
-            decoration: InputDecoration(
-              hintText: "Enter your username",
-              labelText: "Username",
-              enabledBorder: OutlineInputBorder(
-                borderRadius: new BorderRadius.circular(10.0),
-                borderSide:BorderSide(color: Colors.black)
-              ),
-              focusedBorder:OutlineInputBorder(
-                borderRadius: new BorderRadius.circular(10.0),
-                borderSide:BorderSide(color: Colors.black)
-              )
-            )
-          ),
+                controller: myController,
+                decoration: InputDecoration(
+                    hintText: "Enter your username",
+                    labelText: "Username",
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: new BorderRadius.circular(10.0),
+                        borderSide: BorderSide(color: Colors.black)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: new BorderRadius.circular(10.0),
+                        borderSide: BorderSide(color: Colors.black)))),
           ),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.all(2),
-            ),
-            child: Text('Begin'),
-            onPressed:(){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => HomeView()),
-              );
-            }
-        ),
-        ]
-        
-      )
-    );
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.all(2),
+              ),
+              child: Text('Begin'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeView()),
+                );
+              }),
+        ]));
   }
 }
 
